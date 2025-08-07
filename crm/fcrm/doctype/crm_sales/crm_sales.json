@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "autoname": "UUID",
+ "creation": "2025-08-07 21:47:54.560185",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "detail_data_section",
+  "nama",
+  "user_id",
+  "pincab_kah",
+  "aktif",
+  "column_break_kcnf",
+  "pincab",
+  "cabang"
+ ],
+ "fields": [
+  {
+   "fieldname": "detail_data_section",
+   "fieldtype": "Section Break",
+   "label": "Detail Data"
+  },
+  {
+   "fieldname": "nama",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Nama",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "User ID",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pincab_kah",
+   "fieldtype": "Check",
+   "label": "Pincab Kah"
+  },
+  {
+   "default": "1",
+   "fieldname": "aktif",
+   "fieldtype": "Check",
+   "label": "Aktif"
+  },
+  {
+   "fieldname": "column_break_kcnf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pincab",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Pincab",
+   "options": "CRM Sales"
+  },
+  {
+   "fieldname": "cabang",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Cabang"
+  }
+ ],
+ "grid_page_length": 50,
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-07 23:32:03.027394",
+ "modified_by": "Administrator",
+ "module": "FCRM",
+ "name": "CRM Sales",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nama"
+}

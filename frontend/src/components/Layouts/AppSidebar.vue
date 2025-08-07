@@ -188,6 +188,7 @@ import { capture } from '@/telemetry'
 import router from '@/router'
 import { useStorage } from '@vueuse/core'
 import { ref, reactive, computed, h, markRaw, onMounted } from 'vue'
+import SalesTeamIcon from '@/components/Icons/SalesTeamIcon.vue'
 
 const { getPinnedViews, getPublicViews } = viewsStore()
 const { toggle: toggleNotificationPanel } = notificationsStore()
@@ -219,6 +220,11 @@ const allViews = computed(() => {
       label: 'CIF',
       icon: ContactsIcon,
       to: 'Contacts',
+    },
+    {
+      label: 'Sales Team',
+      icon: SalesTeamIcon,
+      to: 'SalesTeam',
     },
     // Removed: Organizations, Notes, Tasks, Call Logs, Video sections
   ]
