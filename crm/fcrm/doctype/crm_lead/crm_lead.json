@@ -18,6 +18,7 @@
   "job_title",
   "source",
   "lead_owner",
+  "sales_id",
   "person_tab",
   "salutation",
   "first_name",
@@ -325,13 +326,19 @@
    "label": "Net Total",
    "options": "currency",
    "read_only": 1
+  },
+  {
+   "fieldname": "sales_id",
+   "fieldtype": "Link",
+   "label": "Sales ID",
+   "options": "CRM Sales"
   }
  ],
  "grid_page_length": 50,
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-14 19:51:06.184569",
+ "modified": "2025-08-07 22:48:41.943332",
  "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM Lead",

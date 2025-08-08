@@ -64,6 +64,18 @@ const routes = [
     name: 'Invalid Page',
     component: () => import('@/pages/InvalidPage.vue'),
   },
+  {
+    alias: '/sales-team',
+    path: '/sales-team/view/:viewType?',
+    name: 'SalesTeam',
+    component: () => import('@/pages/SalesTeam.vue'),
+  },
+  {
+    path: '/sales-team/:salesTeamId',
+    name: 'SalesTeamDetail',
+    component: () => import('@/pages/SalesTeamDetail.vue'),
+    props: true,
+  },
   // Removed routes: Notes, Tasks, Organizations, Call Logs, Video
 ]
 
