@@ -70,15 +70,87 @@
         </button>
       </template>
       <template #tab-panel="{ tab }">
+        <!-- Leads: hanya bulan berjalan (creation date) -->
         <LeadsListView
-          v-if="tab.label === 'Leads' && rows.length"
+          v-if="tab.label === 'Leads' && rowsCurrentMonth.length"
+          class="mt-4"
+          :rows="rowsCurrentMonth"
+          :columns="columns"
+          :options="{ selectable: false, showTooltip: false }"
+        />
+
+        <!-- All Leads: semua leads milik Sales Team ini -->
+        <LeadsListView
+          v-else-if="tab.label === 'All Leads' && rows.length"
           class="mt-4"
           :rows="rows"
           :columns="columns"
           :options="{ selectable: false, showTooltip: false }"
         />
+
+        <!-- List FID: data dari API eksternal -->
+        <div v-else-if="tab.label === 'List FID'" class="mt-4">
+          <div v-if="fidList.loading" class="text-base text-ink-gray-6">
+            {{ __('Loading...') }}
+          </div>
+
+          <div v-else-if="fidList.error" class="text-base">
+            <div class="font-medium text-red-600">
+              {{ __('Failed to load List FID') }}
+            </div>
+            <div class="mt-2 text-sm text-ink-gray-6">
+              {{ __('Kemungkinan masalah CORS. Aktifkan CORS pada endpoint, atau gunakan proxy backend untuk meneruskan request dari server.') }}
+            </div>
+          </div>
+
+          <div
+            v-else-if="fidData.length"
+            class="overflow-auto rounded border"
+          >
+            <table class="min-w-full text-left">
+              <thead>
+                <tr>
+                  <th
+                    v-for="col in fidColumns"
+                    :key="col"
+                    class="border-b px-3 py-2 text-ink-gray-7"
+                  >
+                    {{ col }}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="(item, idx) in fidData"
+                  :key="idx"
+                  class="border-b"
+                >
+                  <td
+                    v-for="col in fidColumns"
+                    :key="col"
+                    class="px-3 py-2"
+                  >
+                    {{ formatCell(item[col]) }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            v-else
+            class="grid flex-1 place-items-center text-xl font-medium text-ink-gray-4"
+          >
+            <div class="flex flex-col items-center justify-center space-y-3">
+              <component :is="tab.icon" class="!h-10 !w-10" />
+              <div>{{ __('No {0} Found', [__(tab.label)]) }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fallback empty state untuk Leads / All Leads -->
         <div
-          v-if="!rows.length"
+          v-else
           class="grid flex-1 place-items-center text-xl font-medium text-ink-gray-4"
         >
           <div class="flex flex-col items-center justify-center space-y-3">
@@ -126,7 +198,7 @@ import {
   usePageMeta,
   toast,
 } from 'frappe-ui'
-import { ref, computed, h } from 'vue'
+import { ref, computed, h, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const { brand } = getSettings()
@@ -192,7 +264,17 @@ const tabs = [
   {
     label: 'Leads',
     icon: h(LeadsIcon, { class: 'h-4 w-4' }),
-    count: computed(() => leads.data?.length),
+    count: computed(() => rowsCurrentMonth.value.length),
+  },
+  {
+    label: 'All Leads',
+    icon: h(LeadsIcon, { class: 'h-4 w-4' }),
+    count: computed(() => rows.value.length),
+  },
+  {
+    label: 'List FID',
+    icon: h(LeadsIcon, { class: 'h-4 w-4' }),
+    count: computed(() => fidData.value.length),
   },
 ]
 
@@ -210,12 +292,66 @@ const rows = computed(() => {
 
   return leads.data.map((row) => getLeadRowObject(row))
 })
+const rowsCurrentMonth = computed(() => {
+  if (!leads.data || leads.data.length === 0) return []
+  const now = new Date()
+  const m = now.getMonth()
+  const y = now.getFullYear()
+  return leads.data
+    .filter((lead) => {
+      const d = new Date(lead.creation || lead.created || lead.modified)
+      return d.getMonth() === m && d.getFullYear() === y
+    })
+    .map((row) => getLeadRowObject(row))
+})
 
 const sections = createResource({
   url: 'crm.fcrm.doctype.crm_fields_layout.crm_fields_layout.get_sidepanel_sections',
   cache: ['sidePanelSections', 'CRM Sales'],
   params: { doctype: 'CRM Sales' },
   auto: true,
+})
+
+const fidList = createResource({
+  url: 'crm.api.sales_team.get_fid',
+  auto: false,
+})
+
+const fidData = computed(() => {
+  // Normalisasi data agar tetap tampil walau backend mengembalikan object { nasabah: [...] }
+  const d = fidList.data
+  if (Array.isArray(d)) return d
+  if (d && Array.isArray(d.nasabah)) return d.nasabah
+  return []
+})
+
+const fidColumns = computed(() => {
+  if (fidData.value.length === 0) return []
+  const sample = fidData.value[0] || {}
+  const keys = Object.keys(sample).filter((k) => {
+    const v = sample[k]
+    return ['string', 'number', 'boolean'].includes(typeof v) || v === null
+  })
+  return keys.slice(0, 8)
+})
+
+function formatCell(value) {
+  if (value === null || value === undefined) return ''
+  if (typeof value === 'object') {
+    try {
+      return JSON.stringify(value)
+    } catch (e) {
+      return String(value)
+    }
+  }
+  return String(value)
+}
+
+watch(tabIndex, (i) => {
+  const t = tabs[i]
+  if (t?.label === 'List FID' && !fidList.data && !fidList.loading) {
+    fidList.reload && fidList.reload()
+  }
 })
 
 const { getFormattedCurrency } = getMeta('CRM Lead')
