@@ -10,3 +10,16 @@ crm/public/frontend
 frontend/yarn.lock
 crm/www/crm.html
 build
+
+# Local IDE/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local containers
+.devcontainer/
+docker/
+
+# CI tools
+.github/

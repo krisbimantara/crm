@@ -1,0 +1,285 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2025-08-18 22:41:41.453367",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "nasabah_tab",
+  "data_nasabah_1_section",
+  "nik",
+  "no_kk",
+  "nama_nasabah",
+  "alias",
+  "tempat_lahir",
+  "tanggal_lahir",
+  "jenis_kelamin",
+  "no_hp",
+  "no_hp_2__whatsapp",
+  "column_break_cmal",
+  "kelurahan_domisili",
+  "kecamatan_domisli",
+  "kota_domisili",
+  "provinsi_domisili",
+  "alamat_domisili",
+  "alamat_sesuai_ktp",
+  "data_nasabah_2_section",
+  "status_rumah",
+  "lama_tinggal_tahun",
+  "lama_tinggal_bulan",
+  "column_break_vkdf",
+  "status",
+  "nama_ibu_kandung",
+  "jumlah_tanggungan",
+  "data_pekerjaan_section",
+  "pekerjaan",
+  "bidang_usaha",
+  "jabatan",
+  "lama_kerja_tahun",
+  "lama_kerja_bulan",
+  "column_break_hdzd",
+  "nama_kantor",
+  "no_telp_kantor",
+  "alamat_kantor",
+  "data_penghasilan_section",
+  "penghasilan",
+  "penghasilan_lain_lain",
+  "pengeluaran"
+ ],
+ "fields": [
+  {
+   "fieldname": "nasabah_tab",
+   "fieldtype": "Tab Break",
+   "label": "Nasabah"
+  },
+  {
+   "fieldname": "data_nasabah_1_section",
+   "fieldtype": "Section Break",
+   "label": "Data Pribadi"
+  },
+  {
+   "fieldname": "nik",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "NIK",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "no_kk",
+   "fieldtype": "Data",
+   "label": "No KK"
+  },
+  {
+   "fieldname": "nama_nasabah",
+   "fieldtype": "Data",
+   "label": "Nama"
+  },
+  {
+   "fieldname": "alias",
+   "fieldtype": "Data",
+   "label": "Alias"
+  },
+  {
+   "fieldname": "tempat_lahir",
+   "fieldtype": "Data",
+   "label": "Tempat Lahir"
+  },
+  {
+   "fieldname": "tanggal_lahir",
+   "fieldtype": "Date",
+   "label": "Tanggal Lahir"
+  },
+  {
+   "fieldname": "jenis_kelamin",
+   "fieldtype": "Select",
+   "label": "Jenis Kelamin",
+   "options": "Laki - Laki\nPerempuan"
+  },
+  {
+   "fieldname": "no_hp",
+   "fieldtype": "Phone",
+   "label": "No HP"
+  },
+  {
+   "fieldname": "no_hp_2__whatsapp",
+   "fieldtype": "Phone",
+   "label": "No HP 2 / Whatsapp"
+  },
+  {
+   "fieldname": "column_break_cmal",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "kelurahan_domisili",
+   "fieldtype": "Data",
+   "label": "Kelurahan Domisili"
+  },
+  {
+   "fieldname": "kecamatan_domisli",
+   "fieldtype": "Data",
+   "label": "Kecamatan Domisli"
+  },
+  {
+   "fieldname": "kota_domisili",
+   "fieldtype": "Data",
+   "label": "Kota Domisili"
+  },
+  {
+   "fieldname": "provinsi_domisili",
+   "fieldtype": "Data",
+   "label": "Provinsi Domisili"
+  },
+  {
+   "fieldname": "alamat_domisili",
+   "fieldtype": "Small Text",
+   "label": "Alamat Domisili"
+  },
+  {
+   "fieldname": "alamat_sesuai_ktp",
+   "fieldtype": "Small Text",
+   "label": "Alamat Sesuai KTP"
+  },
+  {
+   "fieldname": "data_nasabah_2_section",
+   "fieldtype": "Section Break",
+   "label": "Data Pribadi Lainnya"
+  },
+  {
+   "fieldname": "status_rumah",
+   "fieldtype": "Select",
+   "label": "Status Rumah"
+  },
+  {
+   "fieldname": "lama_tinggal_tahun",
+   "fieldtype": "Int",
+   "label": "Lama Tinggal (Tahun)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "lama_tinggal_bulan",
+   "fieldtype": "Int",
+   "label": "Lama Tinggal (Bulan)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_vkdf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status"
+  },
+  {
+   "fieldname": "nama_ibu_kandung",
+   "fieldtype": "Data",
+   "label": "Nama Ibu Kandung"
+  },
+  {
+   "fieldname": "jumlah_tanggungan",
+   "fieldtype": "Int",
+   "label": "Jumlah Tanggungan",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "data_pekerjaan_section",
+   "fieldtype": "Section Break",
+   "label": "Data Pekerjaan"
+  },
+  {
+   "fieldname": "pekerjaan",
+   "fieldtype": "Data",
+   "label": "Pekerjaan"
+  },
+  {
+   "fieldname": "bidang_usaha",
+   "fieldtype": "Data",
+   "label": "Bidang Usaha"
+  },
+  {
+   "fieldname": "jabatan",
+   "fieldtype": "Data",
+   "label": "Jabatan"
+  },
+  {
+   "fieldname": "lama_kerja_tahun",
+   "fieldtype": "Int",
+   "label": "Lama Kerja (Tahun)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "lama_kerja_bulan",
+   "fieldtype": "Int",
+   "label": "Lama Kerja (Bulan)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_hdzd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nama_kantor",
+   "fieldtype": "Data",
+   "label": "Nama Kantor"
+  },
+  {
+   "fieldname": "no_telp_kantor",
+   "fieldtype": "Phone",
+   "label": "No Telp Kantor"
+  },
+  {
+   "fieldname": "alamat_kantor",
+   "fieldtype": "Small Text",
+   "label": "Alamat Kantor"
+  },
+  {
+   "fieldname": "data_penghasilan_section",
+   "fieldtype": "Section Break",
+   "label": "Data Penghasilan"
+  },
+  {
+   "fieldname": "penghasilan",
+   "fieldtype": "Currency",
+   "label": "Penghasilan"
+  },
+  {
+   "fieldname": "penghasilan_lain_lain",
+   "fieldtype": "Currency",
+   "label": "Penghasilan Lain Lain"
+  },
+  {
+   "fieldname": "pengeluaran",
+   "fieldtype": "Currency",
+   "label": "Pengeluaran"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-18 22:41:41.453367",
+ "modified_by": "Administrator",
+ "module": "FCRM",
+ "name": "Data Nasabah",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
