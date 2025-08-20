@@ -10,21 +10,117 @@
  "email_append_to": 1,
  "engine": "InnoDB",
  "field_order": [
-  "details",
-  "organization",
-  "website",
-  "territory",
-  "industry",
-  "job_title",
-  "source",
-  "lead_owner",
-  "sales_id",
   "person_tab",
+  "data_pribadi_section",
+  "nik",
+  "no_kk",
+  "nama_lengkap",
+  "alias",
+  "tempat_lahir",
+  "tanggal_lahir",
+  "jenis_kelamin",
+  "no_hp",
+  "no_hp_2__wa",
+  "column_break_kzhn",
+  "kelurahan_domisili",
+  "kecamatan_domisili",
+  "kota_domisili",
+  "provinsi_domisili",
+  "alamat_domisili",
+  "alamat_sesuai_ktp",
+  "data_pribadi_lainnya_section",
+  "status_tempat_tinggal",
+  "lama_tinggal_tahun",
+  "lama_tinggal_bulan",
+  "column_break_jmem",
+  "status_perkawinan",
+  "nama_ibu_kandung",
+  "jumlah_tanggungan",
+  "data_pekerjaan_section",
+  "pekerjaan",
+  "bidang_usaha",
+  "jabatan",
+  "lama_kerja_tahun",
+  "lama_kerja_bulan",
+  "column_break_fzbe",
+  "nama_perusahaan",
+  "no_telp_perusahaan",
+  "alamat_perusahaan",
+  "data_penghasilan_section",
+  "penghasilan",
+  "penghasilan_lain_lain",
+  "pengeluaran",
+  "data_kontak_darurat_section",
+  "nama_kd_1",
+  "alamat_kd_1",
+  "hubungan_kd_1",
+  "pekerjaan_kd_1",
+  "no_hp_kd_1",
+  "column_break_ilfc",
+  "nama_kd_2",
+  "alamat_kd_2",
+  "hubungan_kd_2",
+  "pekerjaan_kd_2",
+  "no_hp_kd_2",
+  "section_break_wmgb",
   "salutation",
   "first_name",
   "last_name",
   "email",
   "mobile_no",
+  "penjamin_tab",
+  "data_pribadi_pps_section",
+  "tipe",
+  "hubungan",
+  "nik_pps",
+  "nama_pps",
+  "tempat_lahir_pps",
+  "tanggal_lahir_pps",
+  "jenis_kelamin_pps",
+  "no_hp_pps",
+  "no_hp_2__wa_pps",
+  "column_break_hphl",
+  "kelurahan_domisili_pps",
+  "kecamatan_domisili_pps",
+  "kota_domisili_pps",
+  "provinsi_domisili_pps",
+  "alamat_domisili_pps",
+  "alamat_sesuai_ktp_pps",
+  "data_pendukung_section",
+  "status_tempat_tinggal_pps",
+  "lama_tinggal_tahun_pps",
+  "lama_tinggal_bulan_pps",
+  "data_pekerjaan_pps_section",
+  "pekerjaan_pps",
+  "jabatan_pps",
+  "lama_bekerja_tahun_pps",
+  "lama_bekerja_bulan_pps",
+  "column_break_wixa",
+  "nama_perusahaan_pps",
+  "no_telp_perusahaan_pps",
+  "alamat_perusahaan_pps",
+  "pengajuan_tab",
+  "data_kendaraan_section",
+  "kategori",
+  "rangka",
+  "mesin",
+  "nopol",
+  "merk",
+  "model",
+  "tahun",
+  "column_break_ffmt",
+  "warna",
+  "cc",
+  "no_bpkb",
+  "nama_bpkb",
+  "alamat_bpkb",
+  "masa_berlaku_stnk",
+  "data_pengajuan_section",
+  "pinjam",
+  "column_break_nvco",
+  "tenor",
+  "column_break_kioj",
+  "angsuran",
   "organization_tab",
   "section_break_uixv",
   "naming_series",
@@ -38,6 +134,15 @@
   "annual_revenue",
   "image",
   "converted",
+  "details",
+  "organization",
+  "website",
+  "territory",
+  "industry",
+  "job_title",
+  "source",
+  "lead_owner",
+  "sales_id",
   "products_tab",
   "products",
   "section_break_ggwh",
@@ -75,8 +180,7 @@
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
-   "label": "First Name",
-   "reqd": 1
+   "label": "First Name"
   },
   {
    "fieldname": "middle_name",
@@ -205,7 +309,7 @@
   {
    "fieldname": "person_tab",
    "fieldtype": "Tab Break",
-   "label": "Person"
+   "label": "Nasabah"
   },
   {
    "fieldname": "details",
@@ -332,13 +436,539 @@
    "fieldtype": "Link",
    "label": "Sales ID",
    "options": "CRM Sales"
+  },
+  {
+   "fieldname": "data_pribadi_section",
+   "fieldtype": "Section Break",
+   "label": "Data Pribadi"
+  },
+  {
+   "fieldname": "nik",
+   "fieldtype": "Data",
+   "label": "NIK",
+   "reqd": 1
+  },
+  {
+   "fieldname": "no_kk",
+   "fieldtype": "Data",
+   "label": "No KK"
+  },
+  {
+   "fieldname": "nama_lengkap",
+   "fieldtype": "Data",
+   "label": "Nama Lengkap"
+  },
+  {
+   "fieldname": "alias",
+   "fieldtype": "Data",
+   "label": "Alias"
+  },
+  {
+   "fieldname": "tempat_lahir",
+   "fieldtype": "Data",
+   "label": "Tempat Lahir"
+  },
+  {
+   "fieldname": "tanggal_lahir",
+   "fieldtype": "Date",
+   "label": "Tanggal Lahir"
+  },
+  {
+   "fieldname": "jenis_kelamin",
+   "fieldtype": "Select",
+   "label": "Jenis Kelamin",
+   "options": "Laki - Laki\nPerempuan"
+  },
+  {
+   "fieldname": "no_hp",
+   "fieldtype": "Phone",
+   "label": "No HP"
+  },
+  {
+   "fieldname": "no_hp_2__wa",
+   "fieldtype": "Phone",
+   "label": "No HP 2 / WA"
+  },
+  {
+   "fieldname": "column_break_kzhn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "kelurahan_domisili",
+   "fieldtype": "Data",
+   "label": "Kelurahan Domisili"
+  },
+  {
+   "fieldname": "kecamatan_domisili",
+   "fieldtype": "Data",
+   "label": "Kecamatan Domisili"
+  },
+  {
+   "fieldname": "kota_domisili",
+   "fieldtype": "Data",
+   "label": "Kota Domisili"
+  },
+  {
+   "fieldname": "provinsi_domisili",
+   "fieldtype": "Data",
+   "label": "Provinsi Domisili"
+  },
+  {
+   "fieldname": "alamat_domisili",
+   "fieldtype": "Small Text",
+   "label": "Alamat Domisili"
+  },
+  {
+   "fieldname": "alamat_sesuai_ktp",
+   "fieldtype": "Small Text",
+   "label": "Alamat Sesuai KTP"
+  },
+  {
+   "fieldname": "section_break_wmgb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "data_pribadi_lainnya_section",
+   "fieldtype": "Section Break",
+   "label": "Data Pribadi Lainnya"
+  },
+  {
+   "fieldname": "status_tempat_tinggal",
+   "fieldtype": "Select",
+   "label": "Status Tempat Tinggal",
+   "options": "Rumah Sendiri\nKost"
+  },
+  {
+   "fieldname": "lama_tinggal_tahun",
+   "fieldtype": "Int",
+   "label": "Lama Tinggal (Tahun)"
+  },
+  {
+   "fieldname": "lama_tinggal_bulan",
+   "fieldtype": "Int",
+   "label": "Lama Tinggal (Bulan)"
+  },
+  {
+   "fieldname": "column_break_jmem",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status_perkawinan",
+   "fieldtype": "Select",
+   "label": "Status Perkawinan",
+   "options": "Belum Menikah\nSudah Menikah"
+  },
+  {
+   "fieldname": "nama_ibu_kandung",
+   "fieldtype": "Data",
+   "label": "Nama Ibu Kandung"
+  },
+  {
+   "fieldname": "jumlah_tanggungan",
+   "fieldtype": "Int",
+   "label": "Jumlah Tanggungan"
+  },
+  {
+   "fieldname": "data_pekerjaan_section",
+   "fieldtype": "Section Break",
+   "label": "Data Pekerjaan"
+  },
+  {
+   "fieldname": "pekerjaan",
+   "fieldtype": "Data",
+   "label": "Pekerjaan"
+  },
+  {
+   "fieldname": "bidang_usaha",
+   "fieldtype": "Data",
+   "label": "Bidang Usaha"
+  },
+  {
+   "fieldname": "jabatan",
+   "fieldtype": "Data",
+   "label": "Jabatan"
+  },
+  {
+   "fieldname": "lama_kerja_tahun",
+   "fieldtype": "Int",
+   "label": "Lama Kerja (Tahun)"
+  },
+  {
+   "fieldname": "lama_kerja_bulan",
+   "fieldtype": "Int",
+   "label": "Lama Kerja (Bulan)"
+  },
+  {
+   "fieldname": "column_break_fzbe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nama_perusahaan",
+   "fieldtype": "Data",
+   "label": "Nama Perusahaan"
+  },
+  {
+   "fieldname": "no_telp_perusahaan",
+   "fieldtype": "Phone",
+   "label": "No Telp Perusahaan"
+  },
+  {
+   "fieldname": "alamat_perusahaan",
+   "fieldtype": "Small Text",
+   "label": "Alamat Perusahaan"
+  },
+  {
+   "fieldname": "data_penghasilan_section",
+   "fieldtype": "Section Break",
+   "label": "Data Penghasilan"
+  },
+  {
+   "fieldname": "penghasilan",
+   "fieldtype": "Currency",
+   "label": "Penghasilan"
+  },
+  {
+   "fieldname": "penghasilan_lain_lain",
+   "fieldtype": "Currency",
+   "label": "Penghasilan Lain Lain"
+  },
+  {
+   "fieldname": "pengeluaran",
+   "fieldtype": "Currency",
+   "label": "Pengeluaran"
+  },
+  {
+   "fieldname": "data_kontak_darurat_section",
+   "fieldtype": "Section Break",
+   "label": "Data Kontak Darurat"
+  },
+  {
+   "fieldname": "nama_kd_1",
+   "fieldtype": "Data",
+   "label": "Nama KD 1"
+  },
+  {
+   "fieldname": "alamat_kd_1",
+   "fieldtype": "Small Text",
+   "label": "Alamat KD 1"
+  },
+  {
+   "fieldname": "hubungan_kd_1",
+   "fieldtype": "Data",
+   "label": "Hubungan KD 1"
+  },
+  {
+   "fieldname": "pekerjaan_kd_1",
+   "fieldtype": "Data",
+   "label": "Pekerjaan KD 1"
+  },
+  {
+   "fieldname": "no_hp_kd_1",
+   "fieldtype": "Phone",
+   "label": "No HP KD 1"
+  },
+  {
+   "fieldname": "column_break_ilfc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nama_kd_2",
+   "fieldtype": "Data",
+   "label": "Nama KD 2"
+  },
+  {
+   "fieldname": "alamat_kd_2",
+   "fieldtype": "Small Text",
+   "label": "Alamat KD 2"
+  },
+  {
+   "fieldname": "hubungan_kd_2",
+   "fieldtype": "Data",
+   "label": "Hubungan KD 2"
+  },
+  {
+   "fieldname": "pekerjaan_kd_2",
+   "fieldtype": "Data",
+   "label": "Pekerjaan KD 2"
+  },
+  {
+   "fieldname": "no_hp_kd_2",
+   "fieldtype": "Phone",
+   "label": "No HP KD 2"
+  },
+  {
+   "fieldname": "penjamin_tab",
+   "fieldtype": "Tab Break",
+   "label": "Penjamin"
+  },
+  {
+   "fieldname": "data_pribadi_pps_section",
+   "fieldtype": "Section Break",
+   "label": "Data Pribadi"
+  },
+  {
+   "fieldname": "tipe",
+   "fieldtype": "Select",
+   "label": "Tipe",
+   "options": "Penjamin\nPasangan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hubungan",
+   "fieldtype": "Select",
+   "label": "Hubungan",
+   "options": "Suami\nIstri\nSaudara",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nik_pps",
+   "fieldtype": "Data",
+   "label": "NIK",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nama_pps",
+   "fieldtype": "Data",
+   "label": "Nama"
+  },
+  {
+   "fieldname": "tempat_lahir_pps",
+   "fieldtype": "Data",
+   "label": "Tempat Lahir"
+  },
+  {
+   "fieldname": "tanggal_lahir_pps",
+   "fieldtype": "Date",
+   "label": "Tanggal Lahir"
+  },
+  {
+   "fieldname": "jenis_kelamin_pps",
+   "fieldtype": "Select",
+   "label": "Jenis Kelamin",
+   "options": "Laki - Laki\nPerempuan"
+  },
+  {
+   "fieldname": "column_break_hphl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_hp_pps",
+   "fieldtype": "Phone",
+   "label": "No HP"
+  },
+  {
+   "fieldname": "no_hp_2__wa_pps",
+   "fieldtype": "Phone",
+   "label": "No HP 2 / WA"
+  },
+  {
+   "fieldname": "alamat_domisili_pps",
+   "fieldtype": "Small Text",
+   "label": "Alamat Domisili "
+  },
+  {
+   "fieldname": "alamat_sesuai_ktp_pps",
+   "fieldtype": "Small Text",
+   "label": "Alamat Sesuai KTP"
+  },
+  {
+   "fieldname": "data_pendukung_section",
+   "fieldtype": "Section Break",
+   "label": "Data Pendukung"
+  },
+  {
+   "fieldname": "status_tempat_tinggal_pps",
+   "fieldtype": "Select",
+   "label": "Status Tempat Tinggal",
+   "options": "Rumah Sendiri\nKost"
+  },
+  {
+   "fieldname": "lama_tinggal_tahun_pps",
+   "fieldtype": "Int",
+   "label": "Lama Tinggal (Tahun)"
+  },
+  {
+   "fieldname": "lama_tinggal_bulan_pps",
+   "fieldtype": "Int",
+   "label": "Lama Tinggal (Bulan)"
+  },
+  {
+   "fieldname": "data_pekerjaan_pps_section",
+   "fieldtype": "Section Break",
+   "label": "Data Pekerjaan"
+  },
+  {
+   "fieldname": "pekerjaan_pps",
+   "fieldtype": "Data",
+   "label": "Pekerjaan"
+  },
+  {
+   "fieldname": "jabatan_pps",
+   "fieldtype": "Data",
+   "label": "Jabatan"
+  },
+  {
+   "fieldname": "lama_bekerja_tahun_pps",
+   "fieldtype": "Int",
+   "label": "Lama Bekerja (Tahun)"
+  },
+  {
+   "fieldname": "lama_bekerja_bulan_pps",
+   "fieldtype": "Int",
+   "label": "Lama Bekerja (Bulan)"
+  },
+  {
+   "fieldname": "column_break_wixa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nama_perusahaan_pps",
+   "fieldtype": "Data",
+   "label": "Nama Perusahaan"
+  },
+  {
+   "fieldname": "no_telp_perusahaan_pps",
+   "fieldtype": "Phone",
+   "label": "No Telp Perusahaan"
+  },
+  {
+   "fieldname": "alamat_perusahaan_pps",
+   "fieldtype": "Small Text",
+   "label": "Alamat Perusahaan"
+  },
+  {
+   "fieldname": "kelurahan_domisili_pps",
+   "fieldtype": "Data",
+   "label": "Kelurahan Domisili"
+  },
+  {
+   "fieldname": "kecamatan_domisili_pps",
+   "fieldtype": "Data",
+   "label": "Kecamatan Domisili"
+  },
+  {
+   "fieldname": "kota_domisili_pps",
+   "fieldtype": "Data",
+   "label": "Kota Domisili"
+  },
+  {
+   "fieldname": "provinsi_domisili_pps",
+   "fieldtype": "Data",
+   "label": "Provinsi Domisili"
+  },
+  {
+   "fieldname": "pengajuan_tab",
+   "fieldtype": "Tab Break",
+   "label": "Pengajuan"
+  },
+  {
+   "fieldname": "data_kendaraan_section",
+   "fieldtype": "Section Break",
+   "label": "Data Kendaraan"
+  },
+  {
+   "fieldname": "kategori",
+   "fieldtype": "Data",
+   "label": "Kategori"
+  },
+  {
+   "fieldname": "rangka",
+   "fieldtype": "Data",
+   "label": "Rangka"
+  },
+  {
+   "fieldname": "mesin",
+   "fieldtype": "Data",
+   "label": "Mesin"
+  },
+  {
+   "fieldname": "nopol",
+   "fieldtype": "Data",
+   "label": "Nopol"
+  },
+  {
+   "fieldname": "merk",
+   "fieldtype": "Data",
+   "label": "Merk"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model"
+  },
+  {
+   "fieldname": "tahun",
+   "fieldtype": "Int",
+   "label": "Tahun"
+  },
+  {
+   "fieldname": "column_break_ffmt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "warna",
+   "fieldtype": "Data",
+   "label": "Warna"
+  },
+  {
+   "fieldname": "cc",
+   "fieldtype": "Float",
+   "label": "CC"
+  },
+  {
+   "fieldname": "no_bpkb",
+   "fieldtype": "Data",
+   "label": "No BPKB"
+  },
+  {
+   "fieldname": "nama_bpkb",
+   "fieldtype": "Data",
+   "label": "Nama BPKB"
+  },
+  {
+   "fieldname": "alamat_bpkb",
+   "fieldtype": "Small Text",
+   "label": "Alamat BPKB"
+  },
+  {
+   "fieldname": "masa_berlaku_stnk",
+   "fieldtype": "Date",
+   "label": "Masa Berlaku STNK"
+  },
+  {
+   "fieldname": "data_pengajuan_section",
+   "fieldtype": "Section Break",
+   "label": "Data Pengajuan"
+  },
+  {
+   "fieldname": "pinjam",
+   "fieldtype": "Currency",
+   "label": "Pinjam"
+  },
+  {
+   "fieldname": "column_break_nvco",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tenor",
+   "fieldtype": "Select",
+   "label": "Tenor"
+  },
+  {
+   "fieldname": "column_break_kioj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "angsuran",
+   "fieldtype": "Currency",
+   "label": "Angsuran"
   }
  ],
  "grid_page_length": 50,
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-07 22:48:41.943332",
+ "modified": "2025-08-20 15:13:55.960890",
  "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM Lead",
